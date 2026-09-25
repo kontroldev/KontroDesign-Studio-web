@@ -3,6 +3,10 @@ import tailwindcss from '@tailwindcss/postcss';
 import vinext from 'vinext';
 import { defineConfig } from 'vite';
 import hostingConfig from './.openai/hosting.json';
+import { kvDataAdapter } from "@vinext/cloudflare/cache/kv-data-adapter";
+import { cdnAdapter } from "@vinext/cloudflare/cache/cdn-adapter";
+import { imagesOptimizer } from "@vinext/cloudflare/images/images-optimizer";
+import { cloudflare } from "@cloudflare/vite-plugin";
 
 const SITE_CREATOR_PLACEHOLDER_DATABASE_ID =
   '00000000-0000-4000-8000-000000000000';
@@ -50,7 +54,11 @@ export default defineConfig(async () => {
       ? { watch: { useFsEvents: false, usePolling: true } }
       : undefined,
     plugins: [
-      vinext(),
+      vinext({
+        cache: { data: kvDataAdapter(), cdn: cdnAdapter() },
+        images: { optimizer: imagesOptimizer() },
+        prerender: { routes: "*" },
+      }),
       sites(),
       cloudflare({
         viteEnvironment: { name: 'rsc', childEnvironments: ['ssr'] },

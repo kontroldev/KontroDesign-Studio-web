@@ -14,18 +14,18 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://kontrol-design-studios.kontroldev.chatgpt.site'),
-  title: 'Kontrol Design Studios — Apps para Apple',
-  description: 'Estudio independiente de diseño y desarrollo de productos para el ecosistema Apple.',
+  title: 'Kontrol Design Studio — Raúl Gallego',
+  description: 'Diseño y desarrollo de aplicaciones nativas para el ecosistema Apple.',
   openGraph: {
-    title: 'Kontrol Design Studios — Apps para Apple',
-    description: 'Diseño y desarrollo de productos para el ecosistema Apple.',
+    title: 'Kontrol Design Studio — Raúl Gallego',
+    description: 'Diseño y desarrollo de aplicaciones nativas para el ecosistema Apple.',
     type: 'website',
-    images: [{ url: '/og.png', width: 1200, height: 630, alt: 'Kontrol Design Studios' }],
+    images: [{ url: '/og.png', width: 1200, height: 630, alt: 'Kontrol Design Studio' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Kontrol Design Studios — Apps para Apple',
-    description: 'Diseño y desarrollo de productos para el ecosistema Apple.',
+    title: 'Kontrol Design Studio — Raúl Gallego',
+    description: 'Diseño y desarrollo de aplicaciones nativas para el ecosistema Apple.',
     images: ['/og.png'],
   },
 };
