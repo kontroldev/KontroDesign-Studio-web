@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://kontrol-design-studios.kontroldev.chatgpt.site'),
+  metadataBase: new URL('https://kontroldesignstudio.com'),
   title: 'Kontrol Design Studio — Raúl Gallego',
   description: 'Diseño y desarrollo de aplicaciones nativas para el ecosistema Apple.',
   openGraph: {
