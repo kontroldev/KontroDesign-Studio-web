@@ -13,7 +13,7 @@ La web presenta los servicios del estudio, una selección de proyectos, el proce
 - Selección manual de tema guardada en `localStorage`.
 - Metadatos SEO y Open Graph para compartir el sitio.
 - Componentes reutilizables y estilos basados en variables CSS.
-- Preparación para despliegue mediante Vercel o Cloudflare Workers.
+- Publicación automática en Cloudflare Pages desde la rama `main` de GitHub.
 
 ## Tecnologías principales
 
@@ -21,8 +21,6 @@ La web presenta los servicios del estudio, una selección de proyectos, el proce
 - [React](https://react.dev/) 19
 - [TypeScript](https://www.typescriptlang.org/) 5
 - [Tailwind CSS](https://tailwindcss.com/) 4
-- [Vite](https://vite.dev/) 8
-- [vinext](https://github.com/cloudflare/vinext)
 - [Base UI](https://base-ui.com/)
 - [shadcn](https://ui.shadcn.com/)
 - [Lucide React](https://lucide.dev/)
@@ -54,7 +52,7 @@ Instala las dependencias respetando las versiones del archivo de bloqueo:
 pnpm install --frozen-lockfile
 ```
 
-El entorno basado en Vite necesita una configuración local de hosting que no forma parte del repositorio. Solicítala al responsable del proyecto antes de ejecutar los comandos `dev`, `build` o `start` en una instalación nueva.
+No se necesita ninguna configuración de hosting local para desarrollar o generar la web.
 
 ## Ejecución en Visual Studio Code
 
@@ -68,8 +66,7 @@ En Visual Studio Code:
 
 1. Abre **Terminal > New Terminal**.
 2. Ejecuta `pnpm install --frozen-lockfile` si todavía no has instalado las dependencias.
-3. Asegúrate de disponer de la configuración local de hosting requerida.
-4. Inicia el servidor de desarrollo:
+3. Inicia el servidor de desarrollo:
 
 ```bash
 pnpm dev
@@ -83,10 +80,9 @@ Los cambios realizados en los archivos de la aplicación se reflejan durante el 
 
 | Comando | Descripción |
 | --- | --- |
-| `pnpm dev` | Inicia el entorno local de desarrollo con vinext. |
-| `pnpm build` | Genera la versión de producción mediante vinext y Vite. |
-| `pnpm build:vercel` | Genera la versión de producción de Next.js para Vercel. |
-| `pnpm start` | Ejecuta localmente la build generada mediante Wrangler. |
+| `pnpm dev` | Inicia el entorno local de desarrollo de Next.js. |
+| `pnpm build` | Genera una exportación estática en `out/`. |
+| `pnpm start` | Sirve localmente los archivos de `out/`. |
 | `pnpm lint` | Analiza el código con Oxlint. |
 | `pnpm format` | Aplica el formato configurado con Oxfmt. |
 
@@ -106,15 +102,9 @@ Una vez completada la build, inicia el resultado localmente:
 pnpm start
 ```
 
-### Vercel
+### Despliegue
 
-El archivo `vercel.json` configura el proyecto como una aplicación Next.js y utiliza este comando de compilación:
-
-```bash
-pnpm build:vercel
-```
-
-Antes de desplegar, comprueba que la configuración local requerida esté disponible en el entorno de compilación.
+Cloudflare Pages está conectado a GitHub. Cada cambio enviado a `main` ejecuta `pnpm run build` y publica el directorio `out/` en `kontroldesignstudio.pages.dev`, `kontroldesignstudio.com` y `www.kontroldesignstudio.com`.
 
 ## Estructura principal
 
@@ -139,8 +129,6 @@ KontroDesign-Studio-web/
 ├── next.config.ts        # Configuración de Next.js
 ├── postcss.config.mjs    # Configuración de PostCSS
 ├── tsconfig.json         # Configuración de TypeScript
-├── vercel.json           # Configuración de despliegue en Vercel
-├── vite.config.ts        # Configuración de Vite y del entorno de ejecución
 ├── package.json          # Scripts y dependencias
 └── pnpm-lock.yaml        # Versiones exactas de las dependencias
 ```
