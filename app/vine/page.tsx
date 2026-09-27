@@ -1,5 +1,8 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { ArrowUpRight, BookOpen, Bell, FileText } from 'lucide-react';
+import { VineFooter } from '@/components/vine/vine-footer';
+import { VineHeader } from '@/components/vine/vine-header';
 
 export const metadata: Metadata = {
   title: 'Viñe — organiza tu colección de cómics',
@@ -39,22 +42,15 @@ const tech = ['Swift 6', 'SwiftUI', 'SwiftData', 'StoreKit 2', 'PDFKit'];
 export default function VinePage() {
   return (
     <main>
-      <header className="site-header">
-        <a className="brand header-brand" href="https://kontroldev.github.io/" aria-label="Volver al portfolio">
-          <img src="/kontrol-isotipo.png" alt="KontrolDev" className="header-logo" />
-        </a>
-        <nav aria-label="Navegación principal">
-          <a href="#funciones">Funciones</a>
-          <a href="https://github.com/kontroldev/PanelMax-App" target="_blank" rel="noreferrer">
-            GitHub
-          </a>
-        </nav>
-        <span />
-      </header>
+      <VineHeader />
 
       <section className="hero shell vine-hero" id="top">
         <div className="hero-orb hero-orb-one" />
         <div className="hero-orb hero-orb-two" />
+        <div className="vine-brand" aria-label="Viñe">
+          <Image src="/projects/vine.png" alt="Logo de Viñe" width={72} height={72} priority />
+          <span>Viñe</span>
+        </div>
         <div className="eyebrow">
           <span /> App para iOS · Próximamente en App Store
         </div>
@@ -120,19 +116,7 @@ export default function VinePage() {
         </div>
       </section>
 
-      <footer className="site-footer shell">
-        <a className="brand footer-brand" href="https://kontroldev.github.io/" aria-label="Volver al portfolio">
-          <img src="/kontrol-isotipo.png" alt="KontrolDev" className="footer-logo" />
-        </a>
-        <div className="footer-meta">
-          <span>© {new Date().getFullYear()} Raúl Gallego</span>
-          <span>Viñe está en desarrollo activo.</span>
-        </div>
-        <div className="footer-links">
-          <a href="/vine/privacy">Privacidad</a>
-          <a href="/vine/support">Soporte</a>
-        </div>
-      </footer>
+      <VineFooter />
     </main>
   );
 }
