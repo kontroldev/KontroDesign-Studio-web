@@ -11,14 +11,9 @@ export function VineFooter() {
         <span>Viñe está en desarrollo activo.</span>
       </div>
       <div className="footer-links">
-<<<<<<< HEAD
         <Link href="/vine/privacy">Privacidad</Link>
         <Link href="/vine/support">Soporte</Link>
-=======
-        <a href="/vine/privacy">Privacidad</a>
-        <a href="/vine/support">Soporte</a>
-        <a href="/vine/terms">Condiciones de uso</a>
->>>>>>> origin/main
+        <Link href="/vine/terms">Condiciones de uso</Link>
       </div>
     </footer>
   );

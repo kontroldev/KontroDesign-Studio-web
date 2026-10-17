@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 
 import { useSyncExternalStore } from 'react';
 import { ArrowDownRight, ArrowUpRight, Check, ChevronRight, Code2, Database, Layers3, Moon, Sparkles, Sun, TestTube2 } from 'lucide-react';
@@ -10,10 +11,22 @@ const capabilities = [
   ['02', 'Diseño de interfaz', 'Interfaces nativas, accesibles y cuidadas hasta el último detalle.'],
   ['03', 'Desarrollo Apple', 'Apps para el ecosistema Apple construidas con tecnología moderna.'],
 ];
-const projects = [
+type Project = {
+  index: string;
+  name: string;
+  category: string;
+  description: string;
+  tone: string;
+  image: string;
+  imageAlt: string;
+  url: string;
+  appStoreUrl?: string;
+};
+
+const projects: Project[] = [
   { index: '01', name: 'Dragon Ball', category: 'Proyecto colaborativo · iOS', description: 'Una app desarrollada con Swift y SwiftUI que integra contenido de Dragon Ball mediante una API comunitaria.', tone: 'blue', image: '/projects/dragon-ball.png', imageAlt: 'Icono del proyecto Dragon Ball', url: 'https://github.com/kontroldev/Proyecto-Dragon-ball-Swift' },
   { index: '02', name: 'Pomodoro', category: 'Productividad · iOS', description: 'Una aplicación colaborativa para gestionar sesiones Pomodoro y consultar métricas y estadísticas.', tone: 'violet', image: '/projects/pomodoro.png', imageAlt: 'Pantalla del temporizador de Pomodoro', url: 'https://github.com/kontroldev/Proyecto_1_Pomodoro' },
-  { index: '03', name: 'Viñe', category: 'Disponible en App Store', description: 'Una app para organizar colecciones de cómics, detectar números pendientes y leer archivos CBZ y PDF.', tone: 'mint', image: '/projects/vine.png', imageAlt: 'Icono de Viñe', url: '/vine' },
+  { index: '03', name: 'Viñe', category: 'Disponible en App Store', description: 'Una app para organizar colecciones de cómics, detectar números pendientes y leer archivos CBZ y PDF.', tone: 'mint', image: '/projects/vine.png', imageAlt: 'Icono de Viñe', url: '/vine', appStoreUrl: 'https://apps.apple.com/app/viñe/id6809613945' },
 ];
 const process = [
   ['Descubrir', 'Entiendo el problema, las personas y las prioridades del producto.'],
@@ -90,7 +103,22 @@ export default function Home() {
 
       <section className="section projects-section" id="proyectos"><div className="shell">
         <div className="section-heading-row"><div><p className="kicker">Proyectos</p><h2>Productos con intención.</h2></div><p>Aplicaciones personales y colaborativas en las que aprendo y construyo para el ecosistema Apple.</p></div>
-        <div className="projects-list">{projects.map(({ index, name, category, description, tone, image, imageAlt, url }) => { const external = url.startsWith('http'); return <article className="project-row" key={index}><span className="project-index">{index}</span><a className={`project-visual project-media ${tone}`} href={url} target={external ? '_blank' : undefined} rel={external ? 'noreferrer' : undefined} aria-label={`Ver ${name}`}><Image src={image} alt={imageAlt} width={1024} height={1024} /></a><div className="project-copy"><p>{category}</p><h3><a href={url} target={external ? '_blank' : undefined} rel={external ? 'noreferrer' : undefined}>{name}</a></h3><span>{description}</span><a className="project-source" href={url} target={external ? '_blank' : undefined} rel={external ? 'noreferrer' : undefined}>{external ? 'Ver en GitHub' : 'Ver la app'} <ArrowUpRight size={14} /></a></div><a className="project-link-button" href={url} target={external ? '_blank' : undefined} rel={external ? 'noreferrer' : undefined} aria-label={`Ver ${name}`}><ArrowUpRight size={21} /></a></article>; })}</div>
+        <div className="projects-list">{projects.map(({ index, name, category, description, tone, image, imageAlt, url, appStoreUrl }) => { const external = url.startsWith('http'); return <article className="project-row" key={index}><span className="project-index">{index}</span><a className={`project-visual project-media ${tone}`} href={url} target={external ? '_blank' : undefined} rel={external ? 'noreferrer' : undefined} aria-label={`Ver ${name}`}><Image src={image} alt={imageAlt} width={1024} height={1024} /></a><div className="project-copy"><p>{category}</p><h3><a href={url} target={external ? '_blank' : undefined} rel={external ? 'noreferrer' : undefined}>{name}</a></h3><span>{description}</span><div className="project-actions">
+                  {appStoreUrl ? (
+                    <>
+                      <a className="project-source" href={appStoreUrl} target="_blank" rel="noreferrer" aria-label={`Descargar ${name} en App Store`}>
+                        App Store <ArrowUpRight size={14} />
+                      </a>
+                      <Link className="project-source" href={url} aria-label={`Visitar la página web de ${name}`}>
+                        Página web <ArrowUpRight size={14} />
+                      </Link>
+                    </>
+                  ) : (
+                    <a className="project-source" href={url} target={external ? '_blank' : undefined} rel={external ? 'noreferrer' : undefined}>
+                      {external ? 'Ver en GitHub' : 'Ver la app'} <ArrowUpRight size={14} />
+                    </a>
+                  )}
+                </div></div><a className="project-link-button" href={url} target={external ? '_blank' : undefined} rel={external ? 'noreferrer' : undefined} aria-label={`Ver ${name}`}><ArrowUpRight size={21} /></a></article>; })}</div>
       </div></section>
 
       <section className="section shell" id="proceso"><div className="section-intro compact"><p className="kicker">Cómo trabajo</p><h2>Un proceso claro.<br />Sin ruido innecesario.</h2></div><div className="process-grid">{process.map(([title, text], index) => <article key={title}><span>0{index + 1}</span><div className="process-dot" /><h3>{title}</h3><p>{text}</p></article>)}</div></section>

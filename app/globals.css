@@ -51,3 +51,5 @@
 .privacy-summary p:last-child{font-size:17px;line-height:1.55}
 .legal-page-back{margin:48px 0 0}
 @media(max-width:560px){.legal-page{padding-top:120px;padding-bottom:70px}.legal-page-introduction{font-size:18px}.legal-page-content{margin-top:38px}.privacy-meta{align-items:flex-start;flex-direction:column;gap:4px}.privacy-summary{margin-bottom:36px;padding:22px}.legal-page-content section{padding:28px 0}}
+
+.project-actions{display:flex;flex-wrap:wrap;gap:0 24px}
