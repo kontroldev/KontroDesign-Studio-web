@@ -42,8 +42,8 @@ Este es un repositorio privado. La cuenta utilizada para clonarlo debe disponer 
 Clona el repositorio y accede a su carpeta:
 
 ```bash
-git clone https://github.com/kontroldev/KontroDesign-Studio-web.git
-cd KontroDesign-Studio-web
+git clone https://github.com/kontroldev/kontroldesignstudio-web.git
+cd kontroldesignstudio-web
 ```
 
 Instala las dependencias respetando las versiones del archivo de bloqueo:
@@ -109,7 +109,7 @@ Cloudflare Pages está conectado a GitHub. Cada cambio enviado a `main` ejecuta 
 ## Estructura principal
 
 ```text
-KontroDesign-Studio-web/
+kontroldesignstudio-web/
 ├── app/
 │   ├── globals.css       # Estilos globales, temas y diseño responsive
 │   ├── layout.tsx        # Layout raíz y metadatos del sitio
