@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import type { Metadata } from 'next';
 import { VineLegalPage } from '@/components/vine/vine-legal-page';
 
@@ -39,8 +40,8 @@ export default function VineTermsPage() {
       <section>
         <h2>Contacto</h2>
         <p>
-          Para soporte, consulta la página de <a className="text-link" href="/vine/support">Soporte</a>. Para cuestiones de privacidad, consulta la{' '}
-          <a className="text-link" href="/vine/privacy">Política de privacidad</a>.
+          Para soporte, consulta la página de <Link className="text-link" href="/vine/support">Soporte</Link>. Para cuestiones de privacidad, consulta la{' '}
+          <Link className="text-link" href="/vine/privacy">Política de privacidad</Link>.
         </p>
       </section>
     </VineLegalPage>
