@@ -1,3 +1,5 @@
+import Link from 'next/link';
+import Image from 'next/image';
 type VineHeaderProps = {
   showNavigation?: boolean;
 };
@@ -5,14 +7,14 @@ type VineHeaderProps = {
 export function VineHeader({ showNavigation = true }: VineHeaderProps) {
   return (
     <header className="site-header">
-      <a className="brand header-brand" href="/" aria-label="Volver al portfolio">
-        <img src="/kontrol-isotipo.png" alt="KontrolDev" className="header-logo" />
-      </a>
+      <Link className="brand header-brand" href="/" aria-label="Volver al portfolio">
+        <Image src="/kontrol-isotipo.png" alt="KontrolDev" className="header-logo" width={374} height={591} />
+      </Link>
       {showNavigation ? (
         <nav aria-label="Navegación principal">
           <a href="#funciones">Funciones</a>
-          <a href="https://github.com/kontroldev/PanelMax-App" target="_blank" rel="noreferrer">
-            GitHub
+          <a href="https://apps.apple.com/app/viñe/id6809613945" target="_blank" rel="noreferrer">
+            App Store
           </a>
         </nav>
       ) : (

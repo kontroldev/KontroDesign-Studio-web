@@ -1,3 +1,5 @@
+/* These composable primitives preserve their native element and ref APIs; ARIA supplies the required semantics. */
+/* eslint-disable jsx-a11y/prefer-tag-over-role */
 'use client';
 
 import * as React from 'react';
@@ -54,11 +56,15 @@ function InputGroupAddon({
       data-slot="input-group-addon"
       data-align={align}
       className={cn(inputGroupAddonVariants({ align }), className)}
-      onClick={(e) => {
-        if ((e.target as HTMLElement).closest('button')) {
+      onPointerDown={(e) => {
+        if ((e.target as HTMLElement).closest('button, a, input, textarea, select')) {
           return;
         }
-        e.currentTarget.parentElement?.querySelector('input')?.focus();
+        const control = e.currentTarget.parentElement?.querySelector<HTMLInputElement | HTMLTextAreaElement>('input, textarea');
+        if (control) {
+          e.preventDefault();
+          control.focus();
+        }
       }}
       {...props}
     />

@@ -1,3 +1,5 @@
+/* These composable primitives preserve their native element and ref APIs; ARIA supplies the required semantics. */
+/* eslint-disable jsx-a11y/prefer-tag-over-role */
 import { cn } from '@/lib/utils';
 import { Loader2Icon } from 'lucide-react';
 

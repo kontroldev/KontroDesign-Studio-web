@@ -1,3 +1,5 @@
+/* These composable primitives preserve their native element and ref APIs; ARIA supplies the required semantics. */
+/* eslint-disable jsx-a11y/prefer-tag-over-role */
 'use client';
 
 import { useMemo } from 'react';

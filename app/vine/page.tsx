@@ -52,7 +52,7 @@ export default function VinePage() {
           <span>Viñe</span>
         </div>
         <div className="eyebrow">
-          <span /> App para iOS · Próximamente en App Store
+          <span /> App para iOS · Disponible en App Store
         </div>
         <h1>
           Tu colección de cómics,
@@ -66,11 +66,11 @@ export default function VinePage() {
         <div className="hero-actions">
           <a
             className="button button-primary"
-            href="https://github.com/kontroldev/PanelMax-App"
+            href="https://apps.apple.com/app/viñe/id6809613945"
             target="_blank"
             rel="noreferrer"
           >
-            Ver en GitHub <ArrowUpRight size={18} />
+            Descargar en App Store <ArrowUpRight size={18} />
           </a>
           <a className="text-link" href="#funciones">
             Ver funciones
@@ -78,10 +78,10 @@ export default function VinePage() {
         </div>
         <div className="device-row">
           <div className="phone-frame">
-            <img src="/vine/hero.png" alt="Pantalla de inicio de Viñe en iPhone" />
+            <Image src="/vine/hero.png" alt="Pantalla de inicio de Viñe en iPhone" width={402} height={874} />
           </div>
           <div className="tablet-frame">
-            <img src="/vine/ipad-hero.png" alt="Pantalla de inicio de Viñe en iPad" />
+            <Image src="/vine/ipad-hero.png" alt="Pantalla de inicio de Viñe en iPad" width={1032} height={1376} />
           </div>
         </div>
         <div className="hero-foot">
@@ -109,7 +109,7 @@ export default function VinePage() {
               <h3>{title}</h3>
               <p>{text}</p>
               <div className="capability-shot">
-                <img src={image} alt={title} />
+                <Image src={image} alt={title} width={1024} height={1024} />
               </div>
             </article>
           ))}
