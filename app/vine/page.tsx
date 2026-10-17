@@ -48,7 +48,7 @@ export default function VinePage() {
         <div className="hero-orb hero-orb-one" />
         <div className="hero-orb hero-orb-two" />
         <div className="vine-brand" aria-label="Viñe">
-          <Image src="/projects/vine.png" alt="Logo de Viñe" width={72} height={72} priority />
+          <Image src="/vine/app-icon.png" alt="Logo de Viñe" width={72} height={72} priority />
           <span>Viñe</span>
         </div>
         <div className="eyebrow">
