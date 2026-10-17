@@ -1,6 +1,6 @@
-# KontroDesign Studio
+# Kontrol Design Studio
 
-Sitio web corporativo y portfolio de **Kontrol Design Studios**, un estudio independiente especializado en estrategia de producto, diseño de interfaz y desarrollo nativo para el ecosistema Apple.
+Sitio web corporativo y portfolio de **Kontrol Design Studio**, un estudio independiente especializado en estrategia de producto, diseño de interfaz y desarrollo nativo para el ecosistema Apple.
 
 La web presenta los servicios del estudio, una selección de proyectos, el proceso de trabajo y las tecnologías utilizadas. Incluye diseño responsive, navegación por secciones y tema claro u oscuro con persistencia en el navegador.
 
@@ -153,7 +153,7 @@ Corrige cualquier incidencia detectada antes de publicar una nueva versión.
 
 ## Licencia y uso
 
-Copyright © Kontrol Design Studios. Todos los derechos reservados.
+Copyright © Kontrol Design Studio. Todos los derechos reservados.
 
 Este proyecto es software propietario. Su código fuente, diseño, identidad visual, recursos gráficos y contenido no pueden copiarse, modificarse, distribuirse, sublicenciarse ni utilizarse con fines comerciales sin autorización previa y por escrito del titular.
 
