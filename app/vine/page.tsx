@@ -21,19 +21,16 @@ const features = [
     icon: BookOpen,
     title: 'Organiza tu colección',
     text: 'Agrupa tus cómics por serie, número y estado de lectura en un mismo sitio.',
-    image: '/vine/coleccion.png',
   },
   {
     icon: Bell,
     title: 'Sigue los lanzamientos',
     text: 'Detecta los números que te faltan y te avisa de las próximas publicaciones.',
-    image: '/vine/lanzamientos.png',
   },
   {
     icon: FileText,
     title: 'Lee CBZ y PDF',
     text: 'Importa tus archivos y léelos con un visor integrado, sin salir de la app.',
-    image: '/vine/importar.png',
   },
 ];
 
@@ -84,13 +81,10 @@ export default function VinePage() {
             Ver funciones
           </a>
         </div>
-        <div className="device-row">
-          <div className="phone-frame">
-            <Image src="/vine/hero.png" alt="Pantalla de inicio de Viñe en iPhone" width={402} height={874} />
-          </div>
-          <div className="tablet-frame">
-            <Image src="/vine/ipad-hero.png" alt="Pantalla de inicio de Viñe en iPad" width={1032} height={1376} />
-          </div>
+        <div className="vine-video-frame">
+          <video autoPlay muted loop playsInline preload="metadata" poster="/vine/inicio-claro.png" aria-label="Vídeo de presentación de Viñe">
+            <source src="/vine/vine-preview.mp4" type="video/mp4" />
+          </video>
         </div>
         <div className="hero-foot">
           {tech.map((item) => (
@@ -109,18 +103,35 @@ export default function VinePage() {
           </h2>
         </div>
         <div className="capability-grid">
-          {features.map(({ icon: Icon, title, text, image }) => (
+          {features.map(({ icon: Icon, title, text }) => (
             <article className="capability-card" key={title}>
               <div className="capability-icon">
                 <Icon size={20} />
               </div>
               <h3>{title}</h3>
               <p>{text}</p>
-              <div className="capability-shot">
-                <Image src={image} alt={title} width={1024} height={1024} />
-              </div>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section className="section shell vine-screens" id="capturas" aria-labelledby="vine-screens-title">
+        <div className="section-intro compact">
+          <p className="kicker">Viñe en acción</p>
+          <div>
+            <h2 id="vine-screens-title">Tu colección,<br />siempre a mano.</h2>
+            <p>La misma experiencia, preparada para los modos claro y oscuro de tu dispositivo.</p>
+          </div>
+        </div>
+        <div className="vine-screen-grid">
+          <figure className="vine-screen-card">
+            <Image src="/vine/inicio-claro.png" alt="Pantalla de inicio de Viñe en modo claro" width={1535} height={2048} />
+            <figcaption>Modo claro</figcaption>
+          </figure>
+          <figure className="vine-screen-card">
+            <Image src="/vine/inicio-oscuro.png" alt="Pantalla de inicio de Viñe en modo oscuro" width={1535} height={2048} />
+            <figcaption>Modo oscuro</figcaption>
+          </figure>
         </div>
       </section>
 

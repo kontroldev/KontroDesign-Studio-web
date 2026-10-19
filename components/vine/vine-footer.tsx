@@ -3,12 +3,12 @@ import Image from 'next/image';
 export function VineFooter() {
   return (
     <footer className="site-footer shell">
-      <Link className="brand footer-brand" href="/" aria-label="Volver al portfolio">
-        <Image src="/kontrol-isotipo.png" alt="KontrolDev" className="footer-logo" width={374} height={591} />
+      <Link className="brand footer-brand" href="/" aria-label="Kontrol Design Studios">
+        <Image src="/kontrol-logo.png" alt="Kontrol Design Studios" className="footer-logo" width={1774} height={887} />
       </Link>
       <div className="footer-meta">
         <span>© {new Date().getFullYear()} Raúl Gallego</span>
-        <span>Viñe está en desarrollo activo.</span>
+        <span>Viñe ya está disponible en App Store.</span>
       </div>
       <div className="footer-links">
         <Link href="/vine/privacy">Privacidad</Link>
