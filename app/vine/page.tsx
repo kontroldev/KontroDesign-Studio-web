@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
-import { ArrowUpRight, BookOpen, Bell, FileText } from 'lucide-react';
+import { BookOpen, Bell, FileText } from 'lucide-react';
 import { VineFooter } from '@/components/vine/vine-footer';
 import { VineHeader } from '@/components/vine/vine-header';
 
@@ -65,12 +65,20 @@ export default function VinePage() {
         </p>
         <div className="hero-actions">
           <a
-            className="button button-primary"
-            href="https://apps.apple.com/app/viñe/id6809613945"
+            className="app-store-badge-link"
+            href="https://apps.apple.com/es/app/vi%C3%B1e/id6809613945"
             target="_blank"
             rel="noreferrer"
+            aria-label="Descargar Viñe en el App Store"
           >
-            Descargar en App Store <ArrowUpRight size={18} />
+            <Image
+              className="app-store-badge"
+              src="/vine/app-store-badge.svg"
+              alt="Descárgalo en el App Store"
+              width={144}
+              height={48}
+              priority
+            />
           </a>
           <a className="text-link" href="#funciones">
             Ver funciones

@@ -22,6 +22,8 @@
 .vine-hero{padding-bottom:80px}
 .vine-brand{position:relative;z-index:2;display:flex;align-items:center;gap:12px;margin-top:4px;margin-bottom:24px;font-size:28px;font-weight:720;letter-spacing:-.05em}
 .vine-brand img{width:56px;height:56px;border-radius:16px;box-shadow:0 12px 28px rgba(128,8,15,.23)}
+.app-store-badge-link{display:block;line-height:0}
+.app-store-badge{display:block;width:auto;height:48px}
 .device-row{position:relative;z-index:2;margin-top:44px;display:flex;align-items:flex-end;justify-content:center;gap:28px}
 .tablet-frame{width:280px;border-radius:24px;padding:10px;background:var(--foreground);box-shadow:0 24px 50px rgba(0,0,0,.22)}
 .tablet-frame img{display:block;width:100%;border-radius:14px}

@@ -24,7 +24,7 @@ type Project = {
 };
 
 const projects: Project[] = [
-  { index: '01', name: 'Viñe', category: 'Disponible en App Store', description: 'Una app para organizar colecciones de cómics, detectar números pendientes y leer archivos CBZ y PDF.', tone: 'mint', image: '/vine/app-icon.png', imageAlt: 'Icono de Viñe', url: '/vine', appStoreUrl: 'https://apps.apple.com/app/viñe/id6809613945' },
+  { index: '01', name: 'Viñe', category: 'Disponible en App Store', description: 'Una app para organizar colecciones de cómics, detectar números pendientes y leer archivos CBZ y PDF.', tone: 'mint', image: '/vine/app-icon.png', imageAlt: 'Icono de Viñe', url: '/vine', appStoreUrl: 'https://apps.apple.com/es/app/vi%C3%B1e/id6809613945' },
   { index: '02', name: 'Dragon Ball', category: 'Proyecto colaborativo · iOS', description: 'Una app desarrollada con Swift y SwiftUI que integra contenido de Dragon Ball mediante una API comunitaria.', tone: 'blue', image: '/projects/dragon-ball.png', imageAlt: 'Icono del proyecto Dragon Ball', url: 'https://github.com/kontroldev/Proyecto-Dragon-ball-Swift' },
   { index: '03', name: 'Pomodoro', category: 'Productividad · iOS', description: 'Una aplicación colaborativa para gestionar sesiones Pomodoro y consultar métricas y estadísticas.', tone: 'violet', image: '/projects/pomodoro.png', imageAlt: 'Pantalla del temporizador de Pomodoro', url: 'https://github.com/kontroldev/Proyecto_1_Pomodoro' },
 ];

@@ -13,7 +13,7 @@ export function VineHeader({ showNavigation = true }: VineHeaderProps) {
       {showNavigation ? (
         <nav aria-label="Navegación principal">
           <a href="#funciones">Funciones</a>
-          <a href="https://apps.apple.com/app/viñe/id6809613945" target="_blank" rel="noreferrer">
+          <a href="https://apps.apple.com/es/app/vi%C3%B1e/id6809613945" target="_blank" rel="noreferrer">
             App Store
           </a>
         </nav>
